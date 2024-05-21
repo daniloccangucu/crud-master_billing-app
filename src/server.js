@@ -1,8 +1,12 @@
 import express from "express";
+import dotenv from "dotenv";
+
 import { connectToRabbitMQ } from "./config/rabbitmq.js";
 
+dotenv.config();
+
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.BILLING_PORT;
 
 app.use(express.json());
 
